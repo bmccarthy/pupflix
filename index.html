@@ -22,6 +22,34 @@
         }
     </style>
 
+    <script>
+        var randomImage = getRandomImage();
+
+        document.documentElement.style.background = "url(" + randomImage + ") no-repeat center center fixed";
+
+        function getRandomImage() {
+            var images = [
+                "link_ball.jpg",
+                "link_beach.jpg",
+                "link_sleeping_2.jpg",
+                "link_sleeping.jpg"
+            ];
+
+            return images[getRandomInt(0, images.length - 1)];
+        }
+
+        /**
+         * Get a random integer between `min` and `max`.
+         * 
+         * @param {number} min - min number
+         * @param {number} max - max number
+         * @return {int} a random integer
+         */
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+    </script>
+
     <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
     <script>
         window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
